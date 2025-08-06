@@ -7,9 +7,7 @@ public:
         unordered_map<string, vector<string>> group;
         for(string str:strs) {
             vector<int> count(26,0);
-            for(char s:str) {
-                count[s-'a']++;
-            }
+            for(char s:str) count[s-'a']++;
             string key;
             for(int i=0; i<26; i++) {
                 key+='#';
@@ -18,9 +16,7 @@ public:
             group[key].push_back(str);
         }
         vector<vector<string>> result;
-        for(auto& [key, gp]:group) {
-            result.push_back(gp);
-        }
+        for(auto& [key, gp]:group) result.push_back(gp);
         return result;
     } 
 };
